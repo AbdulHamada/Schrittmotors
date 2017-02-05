@@ -1,0 +1,35 @@
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BOARD))
+
+X_EN=36
+X_DIR=38
+X_PUL=40
+GPIO.setup(X_EN,GPIO.OUT)
+GPIO.setup(X_DIR,GPIO.OUT)
+GPIO.setup(X_PUL,GPIO.OUT)
+
+GPIO.output(X_EN,False)
+GPIO.output(X_DIR,False)
+GPIO.output(X_PUL, False)
+
+for i in range (i, 200, +1)
+	print("i=", i)
+    GPIO.output(X_EN,True)
+    GPIO.output(X_DIR,False)
+    GPIO.output(X_PUL, True)
+    time(0.05)
+    GPIO.output(X_PUL, False)
+    time(0.05)
+    
+for j in range (j, 200, +1)
+	print("j", j)
+    GPIO.output(X_EN,True)
+    GPIO.output(X_DIR,True)
+    GPIO.output(X_PUL, True)
+    time(0.05)
+    GPIO.output(X_PUL, False)
+    time(0.05)
+GPIO.cleanup()
+    
