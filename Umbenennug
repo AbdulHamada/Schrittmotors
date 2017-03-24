@@ -1,0 +1,74 @@
+# Version 1.0
+# Umbenenung der CT un MRI Daten
+# Geschrieben Von Abdul Malek Hamada
+# Datum: 20.02.2017
+# Liste der �nderungen:
+# 20.02.2017:
+#
+# Wie es funktioniert:
+# Dann:
+
+import time
+
+# Eintragung der Informationen des Patienten
+
+def Patient():
+    # writing in file & # print current date and time
+    text=[time.strftime("Datum:" "%d.%m.%Y""  ""Zeit:" "%H:%M:%S \n"),
+          "         \n",
+          '%s %s '%(Name, Nachname),
+          'PatID:%s '%(PatID),
+          "         \n",
+          "----------------------------------------         \n",
+          " Bitte der folgenden Zeilen zum \"MOSAIQ/Chart/Notes/Physik/Quick Notes\" eintragen "
+          "         \n",
+          "----------------------------------------         \n",
+          "         \n"]
+    fh.writelines(text)
+
+# Eintragung der CT-Daten und der anderen Parameter
+def B_CT():
+    T = raw_input(" Wie viele CT_Serie haben Sie importiert ? = ")
+    C = int (T)
+    Datum = raw_input("Datum der Serie (JJJJMMTT):")
+    modality == CT
+    for j in range (1, C+1):
+        Beschreibung = raw_input("Series Description :")
+        Nr_Image = raw_input ( "Zahl der Bilder : ")
+        text=["         \n",
+              '%s(%s) = %s %s %s WPE CT EG IM%s '%(modality, j, modality, Beschreibung, Datum, Nr_Image),
+              "         \n"]
+        fh.writelines(text)
+
+# Eintragung der MRI-Daten und der anderen Parameter
+def B_MR():
+    R = raw_input(" Wie viele MR_Serie haben Sie importiert ? = ")
+    M = int (R)
+    Datum = raw_input("Datum der Serie (JJJJMMTT):")
+    modality == MR
+    for i in range (1, M+1):
+        Beschreibung = raw_input("Series Description :")
+        Nr_Image = raw_input ( "Zahl der Bilder : ")
+        text=["         \n",
+              '%s(%s) =%s %s %s WPE MR EG IM%s '%(modality, i, modality,  Beschreibung, Datum, Nr_Image),
+              "         \n"]
+        fh.writelines(text)
+
+
+
+
+if __name__== '__main__':
+    Name = raw_input("Name des Patienten :")
+    Nachname = raw_input("Nachname des Patienten :")
+    PatID = raw_input("PatID :")
+    
+    fh = open("Umbenennug.txt","a")
+    Patient()
+    
+    B_CT()
+    B_MR()
+ 
+fh.close()
+fh=open("Umbenennug.txt","r")
+print fh.read()
+fh.close()
